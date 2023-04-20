@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ .Title}}</title>
+    <link href="/static/css/road.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="heading">
+      <span class="logo">Escape.</span>
+      <nav class="heading__nav">
+        <a class="nav__link" href="#">HOME</a>
+        <a class="nav__link" href="#">CATEGORIES</a>
+        <a class="nav__link" href="#">ABOUT</a>
+        <a class="nav__link" href="#">CONTACT</a>
+      </nav>
+    </header>
+    <section class="subheading">
+      <h1 class="subheading__slogan">{{ .Title }}</h1>
+      <p class="subheading__description">{{ .Subtitle }}</p>
+    </section>
+    <section class="main">
+      <img class="main__img" src="{{ .ImagePostURL }}" alt="{{ .Title }}">
+      <div class="paragraphs">
+        <p class="paragraphs__text">
+          {{ .Content }}
+        </p>
+      </div>
+    </section>
+    <div class="intouch-footer">
+      <div class="intouch-footer__intouch">
+        <h2 class="intouch__name">Stay in Touch</h2>
+        <form class="intouch__application">
+          <input class="application__email" type="text" name="email" required="required" placeholder="Enter your email address">
+          <button class="application__submit" type="submit">Submit</button>
+        </form>
+      </div>
+      <footer class="basement">
+        <span class="logo basement__logo">Escape.</span>
+        <nav class="basement__nav">
+          <a class="basement-nav__link" href="#">HOME</a>
+          <a class="basement-nav__link" href="#">CATEGORIES</a>
+          <a class="basement-nav__link" href="#">ABOUT</a>
+          <a class="basement-nav__link" href="#">CONTACT</a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>
