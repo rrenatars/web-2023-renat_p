@@ -35,7 +35,6 @@ type mostRecentData struct {
 	AuthorAvatar string `db:"author_url"`
 	Image        string `db:"image_url"`
 	PostID       string `db:"post_id"`
-	PostURL      string
 }
 
 type postData struct {
@@ -149,10 +148,6 @@ func featuredPosts(db *sqlx.DB) ([]*featuredPostData, error) {
 		return nil, err
 	}
 
-	for _, post := range featuredPosts {
-		post.PostURL = "/post/" + post.PostID
-	}
-
 	return featuredPosts, nil
 }
 
@@ -177,10 +172,6 @@ func mostRecent(db *sqlx.DB) ([]*mostRecentData, error) {
 	err := db.Select(&mostRecent, query)
 	if err != nil { // Проверяем, что запрос в базу данных не завершился с ошибкой
 		return nil, err
-	}
-
-	for _, post := range mostRecent {
-		post.PostURL = "/post/" + post.PostID
 	}
 
 	return mostRecent, nil

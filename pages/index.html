@@ -38,7 +38,7 @@
         <h2 class="name">Featured Posts</h2>
         <div class="featured__posts">
           {{ range .FeaturedPosts }}
-          <a href="{{ .PostURL }}" class="featured__post {{ .Image }}">
+          <a href="post/{{ .PostID }}" class="featured__post {{ .Image }}">
             <h3 class="post__heading">{{ .Title }}</h3>
             <h4 class="post__description">{{ .Subtitle }}</h4>
             <div class="post__info">
@@ -56,7 +56,7 @@
         <h2 class="name">Most Recent</h2>
         <div class="most-recent__posts"> 
           {{ range .MostRecent }}
-          <a href="{{ .PostURL }}" class="most-recent__photo">
+          <a href="post/{{ .PostID }}" class="most-recent__photo">
             <img class="photo__img" src="{{ .Image }}" alt="{{ .Title }}">
             <h3 class="photo__heading">{{ .Title }}</h3>
             <h4 class="photo__description">{{ .Subtitle }}</h4>
