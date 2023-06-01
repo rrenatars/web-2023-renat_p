@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Vertka" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="Vertka">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/web-2023-renat_p" local="$PROJECT_DIR$" web="/web-2023-renat_p" />
+            <mapping local="" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

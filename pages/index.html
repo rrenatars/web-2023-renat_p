@@ -54,7 +54,7 @@
       </div>
       <div class="most-recent">
         <h2 class="name">Most Recent</h2>
-        <div class="most-recent__posts"> 
+        <div class="most-recent__posts">
           {{ range .MostRecent }}
           <a href="post/{{ .PostID }}" class="most-recent__photo">
             <img class="photo__img" src="{{ .Image }}" alt="{{ .Title }}">
@@ -65,7 +65,7 @@
               <div class="photo__author">
                 <img class="author__avatar" src="{{ .AuthorAvatar }}" alt="{{ .Author }}">
                 <span class="recent-author__name">{{ .Author }}</span>
-              </div> 
+              </div>
               <span class="photoinfo__date">{{ .PublishDate }}</span>
             </div>
           </a>
