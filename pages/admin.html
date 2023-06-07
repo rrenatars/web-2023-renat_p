@@ -9,153 +9,153 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="heading">
-    <div class="heading__logo">
-      <span class="logo__name">Escape.</span>
-      <span class="logo__admin">author</span>
-    </div>
-    <div class="heading__auth">
-      <img class="auth__avatar" src="../static/images/avatar.jpg" alt="Avatar">
-      <img class="auth__logout" src="../static/images/log-out.svg" alt="">
-    </div>
+<div class="heading">
+  <div class="heading__logo">
+    <span class="logo__name">Escape.</span>
+    <span class="logo__admin">author</span>
   </div>
-  <div class="main">
-    <div class="publish">
-      <div class="publish__headline">
-        <h1 class="headline__new-post">New Post</h1>
-        <p class="headline__hint">Fill out the form bellow and publish your article</p>
-      </div>
-      <button class="publish__button">Publish</button>
+  <div class="heading__auth">
+    <img class="auth__avatar" src="../static/images/avatar.jpg" alt="Avatar">
+    <img class="auth__logout" src="../static/images/log-out.svg" alt="">
+  </div>
+</div>
+<div class="main">
+  <div class="publish">
+    <div class="publish__headline">
+      <h1 class="headline__new-post">New Post</h1>
+      <p class="headline__hint">Fill out the form bellow and publish your article</p>
     </div>
-    <div class="about-post">
-      <h2 class="about-post__headline">Main Information</h2>
-      <div class="about-post__info">
-        <form class="info__data">
-          <div class="data__field">
-            <span class="field__hint">Title</span>
-            <label>
-              <input class="field__entry" id="PostName" type="text" name="title" required="required" placeholder="New Post">
-            </label>
-          </div>
-          <div class="data__field">
-            <p class="field__hint">Short description</p>
-            <label>
-              <input class="field__entry" id="PostDescription" type="text" name="description" required="required" placeholder="Please, enter any description">
-            </label>
-          </div>
-          <div class="data__field">
-            <p class="field__hint">Author Name</p>
-            <label>
-              <input class="field__entry field__entry_name" id="AuthorName" type="text" name="name" required="required">
-            </label>
-          </div>
-          <div class="data__field">
-            <input class="photo__entry" name="avatar" type="file" id="AuthorAvatar">
-            <p class="field__hint">Author Photo</p>
-            <label for="AuthorAvatar">
-              <div class="div">
-                <div class="field__photo">
-                  <div class="photo__area">
-                    <img class="area__avatar" src="../static/images/camera.svg" alt="">
-                  </div>
-                  <p class="photo__button" id="UploadButton">Upload</p>
-                </div>
-              </div>
-            </label>
-          </div>
-          <div class="data__field">
-            <p class="field__hint">Publish Date</p>
-            <label>
-              <input class="field__entry" id="PublishDate" type="date" name="date" required="required">
-            </label>
-          </div>
-          <div class="data__field">
-            <input class="heroimage__entry" name="heroimage-big" type="file" id="HeroimageBig">
-            <label for="HeroimageBig">
-              <p class="field__hint">Hero Image</p>
-              <div class="field__photo">
-                <div class="photo__heroimage">
-                  <img class="heroimage__avatar" src="../static/images/camera.svg" alt="">
-                  <span class="heroimage__button">Upload</span>
-                </div>
-              </div>
-              <p class="heroimage__hint" id="BigHeroimageHint">Size up to 10mb. Format: png, jpeg, gif.</p>
-            </label>
-          </div>
-          <div class="data__field">
-            <input class="heroimage__entry" name="heroimage-small" type="file" id="HeroimageSmall">
-            <label for="HeroimageSmall">
-              <p class="field__hint">Hero Image</p>
-              <div class="field__photo">
-                <div class="photo__heroimage_smaller">
-                  <img class="heroimage__avatar" src="../static/images/camera.svg" alt="">
-                  <span class="heroimage__button_smaller">Upload</span>
-                </div>
-              </div>
-              <p class="heroimage__hint" id="SmallHeroimageHint">Size up to 5mb. Format: png, jpeg, gif.</p>
-            </label>
-          </div>
-        </form>
-        <div class="info__preview">
-          <span class="preview__hint">Article preview</span>
-          <div class="preview__external-frame">
-            <div class="preview__right-gradient"></div>
-            <div class="preview__bottom-gradient"></div>
-            <div class="external-frame__inner-frame">
-              <img class="inner-frame__ellipse" src="../static/images/ellipse.svg" alt="">
-              <img class="inner-frame__ellipse" src="../static/images/ellipse.svg" alt="">
-              <img class="inner-frame__ellipse" src="../static/images/ellipse.svg" alt="">
-              <div class="inner-frame__content">
-                <h3 class="content__title">New Post</h3>
-                <h4 class="content__description">Please, enter any description</h4>
-                <div class="content__picture" id="PreviewBigImage"></div>
-              </div>
-            </div>
-          </div>
-          <span class="preview__hint">Post card preview</span>
-          <div class="preview__external-frame_home">
-            <div class="preview__right-gradient_home"></div>
-            <div class="preview__bottom-gradient_home"></div>
-            <div class="external-frame__content">
-              <div class="content__picture_home" id="PreviewSmallImage"></div>
-              <h3 class="content__title content__title_home">New Post</h3>
-              <h4 class="content__description content__description_home">Please, enter any description</h4>
-              <div class="content__info">
-                <div class="info__author">
-                  <div class="author__avatar"></div>
-                  <span class="author__name">Enter author name</span>
-                </div>
-                <span class="info__date">4/19/2023</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="content__long-description">
-      <h2 class="long-description__headline">Content</h2>
-      <div class="long-description__data">
+    <button class="publish__button">Publish</button>
+  </div>
+  <div class="about-post">
+    <h2 class="about-post__headline">Main Information</h2>
+    <div class="about-post__info">
+      <form class="info__data" action="" method="post" id="form" name="post">
         <div class="data__field">
-          <p class="long-description__hint">Post content (plain text)</p>
+          <span class="field__hint">Title</span>
           <label>
-            <textarea class="long-description__entry" name="content" placeholder="Type anything you want ..."></textarea>
+            <input class="field__entry" id="PostName" type="text" name="title" required="required" placeholder="New Post">
           </label>
         </div>
+        <div class="data__field">
+          <p class="field__hint">Short description</p>
+          <label>
+            <input class="field__entry" id="PostDescription" type="text" name="description" required="required" placeholder="Please, enter any description">
+          </label>
+        </div>
+        <div class="data__field">
+          <p class="field__hint">Author Name</p>
+          <label>
+            <input class="field__entry field__entry_name" id="AuthorName" type="text" name="name" required="required">
+          </label>
+        </div>
+        <div class="data__field">
+          <input class="photo__entry" name="avatar" type="file" id="AuthorAvatar">
+          <p class="field__hint">Author Photo</p>
+          <label for="AuthorAvatar">
+            <div class="div">
+              <div class="field__photo">
+                <div class="photo__area">
+                  <img class="area__avatar" src="../static/images/camera.svg" alt="">
+                </div>
+                <p class="photo__button" id="UploadButton">Upload</p>
+              </div>
+            </div>
+          </label>
+        </div>
+        <div class="data__field">
+          <p class="field__hint">Publish Date</p>
+          <label>
+            <input class="field__entry" id="PublishDate" type="date" name="date" required="required">
+          </label>
+        </div>
+        <div class="data__field">
+          <input class="heroimage__entry" name="heroimage-big" type="file" id="HeroimageBig">
+          <label for="HeroimageBig">
+            <p class="field__hint">Hero Image</p>
+            <div class="field__photo">
+              <div class="photo__heroimage">
+                <img class="heroimage__avatar" src="../static/images/camera.svg" alt="">
+                <span class="heroimage__button">Upload</span>
+              </div>
+            </div>
+            <p class="heroimage__hint" id="BigHeroimageHint">Size up to 10mb. Format: png, jpeg, gif.</p>
+          </label>
+        </div>
+        <div class="data__field">
+          <input class="heroimage__entry" name="heroimage-small" type="file" id="HeroimageSmall">
+          <label for="HeroimageSmall">
+            <p class="field__hint">Hero Image</p>
+            <div class="field__photo">
+              <div class="photo__heroimage_smaller">
+                <img class="heroimage__avatar" src="../static/images/camera.svg" alt="">
+                <span class="heroimage__button_smaller">Upload</span>
+              </div>
+            </div>
+            <p class="heroimage__hint" id="SmallHeroimageHint">Size up to 5mb. Format: png, jpeg, gif.</p>
+          </label>
+        </div>
+      </form>
+      <div class="info__preview">
+        <span class="preview__hint">Article preview</span>
+        <div class="preview__external-frame">
+          <div class="preview__right-gradient"></div>
+          <div class="preview__bottom-gradient"></div>
+          <div class="external-frame__inner-frame">
+            <img class="inner-frame__ellipse" src="../static/images/ellipse.svg" alt="">
+            <img class="inner-frame__ellipse" src="../static/images/ellipse.svg" alt="">
+            <img class="inner-frame__ellipse" src="../static/images/ellipse.svg" alt="">
+            <div class="inner-frame__content">
+              <h3 class="content__title">New Post</h3>
+              <h4 class="content__description">Please, enter any description</h4>
+              <div class="content__picture" id="PreviewBigImage"></div>
+            </div>
+          </div>
+        </div>
+        <span class="preview__hint">Post card preview</span>
+        <div class="preview__external-frame_home">
+          <div class="preview__right-gradient_home"></div>
+          <div class="preview__bottom-gradient_home"></div>
+          <div class="external-frame__content">
+            <div class="content__picture_home" id="PreviewSmallImage"></div>
+            <h3 class="content__title content__title_home">New Post</h3>
+            <h4 class="content__description content__description_home">Please, enter any description</h4>
+            <div class="content__info">
+              <div class="info__author">
+                <div class="author__avatar"></div>
+                <span class="author__name">Enter author name</span>
+              </div>
+              <span class="info__date">4/19/2023</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <template id="Buttons">
-      <div class="main__buttons">
-        <div class="buttons__new-image">
-          <img src="../static/images/camera.svg" alt="">
-          <span class="buttons__button-new">Upload New</span>
-        </div>
-        <label class="label-disable buttons__delete" onclick="deleteImage(this)">
-          <img class="label-disable" src="../static/images/trash_can.svg" alt="">
-          <span class="label-disable" style="color: #E86961; font: 16px/1.5 'Oxygen';">Remove</span>
+  </div>
+  <div class="content__long-description">
+    <h2 class="long-description__headline">Content</h2>
+    <div class="long-description__data">
+      <div class="data__field">
+        <p class="long-description__hint">Post content (plain text)</p>
+        <label>
+          <textarea id="PostContent" class="long-description__entry" name="content" placeholder="Type anything you want ..."></textarea>
         </label>
       </div>
-    </template>
+    </div>
   </div>
-  <script src="../static/js/admin.js"></script>
+  <template id="Buttons">
+    <div class="main__buttons">
+      <div class="buttons__new-image">
+        <img src="../static/images/camera.svg" alt="">
+        <span class="buttons__button-new">Upload New</span>
+      </div>
+      <label class="label-disable buttons__delete" onclick="deleteImage(this)">
+        <img class="label-disable" src="../static/images/trash_can.svg" alt="">
+        <span class="label-disable" style="color: #E86961; font: 16px/1.5 'Oxygen';">Remove</span>
+      </label>
+    </div>
+  </template>
+</div>
+<script src="../static/js/admin.js"></script>
 </body>
 </html>

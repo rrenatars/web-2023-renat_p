@@ -2,6 +2,7 @@ const postName = document.getElementById('PostName');
 const postDescription = document.getElementById('PostDescription');
 const authorName = document.getElementById('AuthorName');
 const publishDate = document.getElementById('PublishDate');
+const postContent = document.getElementById('PostContent');
 
 postName.addEventListener('keyup', function () {
     update(postName, 'content__title');
@@ -36,6 +37,8 @@ authorAvatar.addEventListener('change', function () {
     replace(uploadButton, buttons);
 });
 
+let avatarUrlBase64 = "";
+
 function previewAuthorAvatar() {
     const file = authorAvatar.files[0];
 
@@ -43,15 +46,13 @@ function previewAuthorAvatar() {
         const reader = new FileReader();
 
         reader.addEventListener('load', function() {
-            const imageUrl = reader.result;
+            avatarUrlBase64 = reader.result;
 
-            const classes = document.querySelectorAll('.author__avatar, .photo__area');
-            Array.prototype.forEach.call(classes, el => {
+            const elements = document.querySelectorAll('.author__avatar, .photo__area');
+            Array.prototype.forEach.call(elements, el => {
                 const imgElement = document.createElement('img');
-                imgElement.src = imageUrl;
-                imgElement.style.width = '100%';
-                imgElement.style.height = '100%';
-                imgElement.style.borderRadius = '50%';
+                imgElement.src = avatarUrlBase64;
+                imgElement.setAttribute('class', 'area__avatar_preview');
 
                 el.innerHTML = '';
                 el.appendChild(imgElement);
@@ -80,19 +81,28 @@ heroimageSmall.addEventListener('change', function () {
     replace(smallHeroimageHint, buttons);
 });
 
-function previewImage(image, classes) {
+let heroimageBigUrlBase64 = "";
+let heroimageSmallUrlBase64 = "";
+
+function previewImage(image, elements) {
     const file = image.files[0];
 
     if (file) {
         const reader = new FileReader();
 
         reader.addEventListener('load', function() {
-            const imageUrl = reader.result;
+            const heroimageUrl = reader.result;
+            if (elements[1].id === 'PreviewBigImage') {
+                heroimageBigUrlBase64 = heroimageUrl;
+            }
+            if (elements[1].id === 'PreviewSmallImage') {
+                heroimageSmallUrlBase64 = heroimageUrl;
+            }
 
-            Array.prototype.forEach.call(classes, el => {
+            Array.prototype.forEach.call(elements, el => {
                 const imgElement = document.createElement('img');
-                imgElement.src = imageUrl;
-                imgElement.setAttribute('class', 'photo__preview')
+                imgElement.src = heroimageUrl;
+                imgElement.setAttribute('class', 'photo__preview');
 
                 el.innerHTML = '';
                 el.appendChild(imgElement);
@@ -118,50 +128,57 @@ const avatarHintText = avatarHint.innerText;
 const avatarPreview = document.getElementsByClassName('.photo__area');
 
 function deleteImage(el) {
-    let temp = el.closest("p"); ///query поменять
+    const heroimageHint = document.querySelector('.heroimage__hint, .heroimage__hint_smaller');
+    let temp = el.closest("p");
+    if (temp.id != 'UploadButton') {
+        deleteHeroimage(heroimageHint);
+    } else {
+        deleteAuthorAvatar(temp);
+    }
+}
+
+function deleteAuthorAvatar(element) {
+    let hintText;
+    hintText = avatarHintText;
+    document.getElementById(element.id).textContent = hintText;
+    const avatarArea = document.querySelector('.area__avatar_preview');
+    avatarArea.src = '/static/images/camera.svg';
+    avatarArea.setAttribute('class', 'area__avatar');
+    const previewAvatar = document.querySelector('.author__avatar');
+    const previewAvatarImage = previewAvatar.firstElementChild;
+    previewAvatar.removeChild(previewAvatarImage);
+}
+
+function deleteHeroimage(element) {
+    let elementId = element.id;
     let hintText;
     let selector;
     let preview;
     let hint;
-    if (temp.id === 'UploadButton') {
-        hint = avatarHint;
-        hintText = avatarHintText;
-        selector = document.querySelectorAll('.photo__area, .author__avatar');
-        document.getElementById(temp.id).textContent = hintText;
-        Array.prototype.forEach.call(selector, container => {
-            const imgElement = container.firstElementChild;
-            imgElement.src = '../static/images/camera.svg';
-            imgElement.style.width = '24px';
-            imgElement.style.height = '24px';
-            imgElement.style.borderRadius = '70%';
-        });
-    } else {
-        if (temp.id === 'BigHeroimageHint') {
-            hint = bigHeroimageHint;
-            hintText = bigHeroimageHintText;
-            selector = '.photo__heroimage';
-            preview = previewBigImage;
-        }
-        if (temp.id === 'SmallHeroimageHint') {
-            hint = smallHeroimageHint;
-            hintText = smallHeroimageHintText;
-            selector = '.photo__heroimage_smaller';
-            preview = previewSmallImage;
-        }
-        document.getElementById(temp.id).textContent = hintText;
-        const container = (temp.closest("div")).querySelector(selector);
-        const imgElement = container.firstElementChild;
-        imgElement.src = '../static/images/camera.svg'; // из корня
-        imgElement.setAttribute('class', 'heroimage__avatar');
-        const spanElement = document.createElement('span');
-        spanElement.textContent = 'Upload';
-        spanElement.setAttribute('class', 'buttons__button-new');
-        container.appendChild(spanElement);
-        const container2 = (preview.closest("div"))
-        const imgElement2 = container2.firstElementChild;
-        container2.removeChild(imgElement2);
+    if (elementId === 'BigHeroimageHint') {
+        hint = bigHeroimageHint;
+        hintText = bigHeroimageHintText;
+        selector = '.photo__heroimage';
+        preview = previewBigImage;
     }
-
+    if (element === 'SmallHeroimageHint') {
+        hint = smallHeroimageHint;
+        hintText = smallHeroimageHintText;
+        selector = '.photo__heroimage_smaller';
+        preview = previewSmallImage;
+    }
+    document.getElementById(elementId).textContent = hintText;
+    const container = document.querySelector(selector);
+    const imgElement = container.firstElementChild;
+    imgElement.src = '/static/images/camera.svg';
+    imgElement.setAttribute('class', 'heroimage__avatar');
+    const spanElement = document.createElement('span');
+    spanElement.textContent = 'Upload';
+    spanElement.setAttribute('class', 'buttons__button-new');
+    container.appendChild(spanElement);
+    const container2 = preview;
+    const imgElement2 = container2.firstElementChild;
+    container2.removeChild(imgElement2);
 }
 
 document.body.addEventListener('click', function (e) {
@@ -173,22 +190,25 @@ document.body.addEventListener('click', function (e) {
 const publishButton = document.querySelector('.publish__button');
 
 publishButton.addEventListener('click', function() {
-    const formData = new FormData();
-
-    const inputElements = document.querySelectorAll('input, textarea');
-
-    inputElements.forEach((input) => {
-        const name = input.getAttribute('name');
-        const value = input.value;
-
-        formData.append(name, value);
-    });
-
-
-    const jsonData = JSON.stringify(Object.fromEntries(formData));
+    console.log(postContent.value);
+    const formData = {
+        title: postName.value,
+        description: postDescription.value,
+        author_name: authorName.value,
+        author_avatar: avatarUrlBase64,
+        publish_date: publishDate.value,
+        big_heroimage: heroimageBigUrlBase64,
+        small_heroimage: heroimageSmallUrlBase64,
+        content: postContent.value
+    }
+    const jsonData = JSON.stringify(formData);
 
     console.log(jsonData);
+
 });
+
+
+
 
 
 
