@@ -3,6 +3,7 @@ const postDescription = document.getElementById('PostDescription');
 const authorName = document.getElementById('AuthorName');
 const publishDate = document.getElementById('PublishDate');
 const postContent = document.getElementById('PostContent');
+console.log(postName);
 
 postName.addEventListener('keyup', function () {
     update(postName, 'content__title');
@@ -54,7 +55,7 @@ function previewAuthorAvatar() {
             Array.prototype.forEach.call(elements, el => {
                 const imgElement = document.createElement('img');
                 imgElement.src = avatarBase64;
-                avatarFileName = file.name
+                avatarFileName = file.name;
                 imgElement.setAttribute('class', 'area__avatar_preview');
 
                 el.innerHTML = '';
@@ -135,6 +136,7 @@ const avatarHintText = avatarHint.innerText;
 
 function deleteImage(el) {
     let temp = el.closest("p");
+    console.log(temp);
     if (temp.id != 'UploadButton') {
         if (temp.id === 'SmallHeroimageHint') {
             const heroimageHintSmall = document.querySelector('.heroimage__hint_smaller');
