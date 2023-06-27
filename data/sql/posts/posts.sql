@@ -2,169 +2,10 @@ INSERT INTO
 	post (
 		title,
 		subtitle,
-        author,
-        author_url,
-		publish_date,
-        image_url,
-		featured
-	) 
-VALUES (
-	'The Road Ahead',
-	'The road ahead might be paved - it might not be.',
-	'Mat Vogels',
-	'static/images/mat_vogels.jpg',
-	'9/25/2015',
-	'featured__post_background-road',
-	'1'
-);
-
-INSERT INTO
-	post (
-		title,
-		subtitle,
-        author,
-        author_url,
-		publish_date,
-        image_url,
-		featured
-	) 
-VALUES (
-	'From Top Down',
-	'Once a year, go someplace you’ve never been before.',
-	'William Wong',
-	'static/images/william_wong.jpg',
-	'9/25/2015',
-	'featured__post_background-fromtop',
-	'1',
-);
-
-INSERT INTO
-	post (
-		title,
-		subtitle,
-        author,
-        author_url,
-		publish_date,
-        image_url,
-		featured
-	) 
-VALUES (
-	'Still Standing Tall',
-	'Life begins at the end of your comfort zone.',
-	'William Wong',
-	'static/images/william_wong.jpg',
-	'9/25/2015',
-	'static/images/still_standing_tall.jpg',
-	'0'
-);
-
-INSERT INTO
-	post (
-		title,
-		subtitle,
-        author,
-        author_url,
-		publish_date,
-        image_url,
-		featured
-	) 
-VALUES (
-	'Sunny Side Up',
-	'No place is ever as bad as they tell you it’s going to be.',
-	'Mat Vogels"',
-	'static/images/mat_vogels.jpg',
-	'9/25/2015',
-	'static/images/sunny_side_up.jpg',
-	'0'
-);
-
-INSERT INTO
-	post (
-		title,
-		subtitle,
-        author,
-        author_url,
-		publish_date,
-        image_url,
-		featured
-	) 
-VALUES (
-	'Water Falls',
-	'We travel not to escape life, but for life not to escape us.',
-	'Mat Vogels',
-	'static/images/mat_vogels.jpg',
-	'9/25/2015',
-	'static/images/water_falls.jpg',
-	'0'
-);
-
-INSERT INTO
-	post (
-		title,
-		subtitle,
-        author,
-        author_url,
-		publish_date,
-        image_url,
-		featured
-	) 
-VALUES (
-	'Through the Mist',
-	'Travel makes you see what a tiny place you occupy in the world.',
-	'William Wong',
-	'static/images/william_wong.jpg',
-	'9/25/2015',
-	'static/images/through_the_mist.jpg',
-	'0'
-);
-
-INSERT INTO
-	post (
-		title,
-		subtitle,
-        author,
-        author_url,
-		publish_date,
-        image_url,
-		featured
-	) 
-VALUES (
-	'Awaken Early',
-	'Not all those who wander are lost.',
-	'Mat Vogels',
-	'static/images/mat_vogels.jpg',
-	'9/25/2015',
-	'static/images/awaken_early.jpg',
-	'0'
-);
-
-INSERT INTO
-	post (
-		title,
-		subtitle,
-        author,
-        author_url,
-		publish_date,
-        image_url,
-		featured
-	) 
-VALUES (
-	'Try it Always',
-	'The world is a book, and those who do not travel read only one page.',
-	'Mat Vogels',
-	'static/images/mat_vogels.jpg',
-	'9/25/2015',
-	'static/images/try_it_always.jpg',
-	'0'
-);
-
-INSERT INTO
-	post (
-		title,
-		subtitle,
 		author,
 		author_url,
 		publish_date,
+	    card_image,
 		image_url,
 		image_url_modifier,
 		content,
@@ -176,6 +17,7 @@ VALUES (
     'Mat Vogels',
     '/static/images/mat_vogels.jpg',
     '9/25/2015',
+    '/static/images/the_road_ahead.jpg',
     '/static/images/the_road_ahead.jpg',
     'featured__post_background-road',
     'As a traveler, I firmly believe that the best way to learn about the world is by experiencing it firsthand. Every time I embark on a new journey, I am reminded of how much there is to see and learn in this world. Recently, I went on a trip that took me from the top of a mountain down to the bottom of a valley. It was an exhilarating journey that left me with memories I will cherish for a lifetime.
@@ -198,6 +40,7 @@ INSERT INTO
 		author,
 		author_url,
 		publish_date,
+	    card_image,
 		image_url,
 		image_url_modifier,
 		content,
@@ -209,6 +52,7 @@ VALUES (
 	'William Wong',
 	'/static/images/william_wong.jpg',
 	'9/25/2015',
+    '/static/images/from_top_down.jpg',
     '/static/images/from_top_down.jpg',
 	'featured__post_background-fromtop',
 	'From Top Down - A Journey to the Highest Peaks
@@ -233,6 +77,7 @@ INSERT INTO
 		author,
 		author_url,
 		publish_date,
+	    card_image,
 		image_url,
 		content,
 		featured
@@ -244,6 +89,7 @@ VALUES (
 	'/static/images/william_wong.jpg',
 	'9/25/2015',
 	'/static/images/still_standing_tall.jpg',
+    '/static/images/still_standing_tall.jpg',
 	'As a traveler, I’ve been to many different places and have seen countless stunning sights. However, there’s one journey that always stands out in my mind - a trip to the Sequoia National Park in California.
 
 	The Sequoia National Park is home to some of the tallest trees in the world, including the General Sherman Tree, which stands at an impressive 275 feet tall. As I walked through the park, I couldn’t help but feel small in comparison to these towering giants.
@@ -266,6 +112,7 @@ INSERT INTO
 		author,
 		author_url,
 		publish_date,
+	    card_image,
 		image_url,
 		content,
 		featured
@@ -277,6 +124,7 @@ VALUES (
 	'/static/images/mat_vogels.jpg',
 	'9/25/2015',
 	'/static/images/sunny_side_up.jpg',
+    '/static/images/sunny_side_up.jpg',
 	'Sunny Side Up - A Journey of Surprises and Delights
 
 	As a traveler, I am always on the lookout for new experiences and adventures, and my latest journey was no exception. This time around, I decided to explore some of the lesser-known corners of Southeast Asia, starting with the islands of Indonesia.
@@ -303,6 +151,7 @@ INSERT INTO
 		author,
 		author_url,
 		publish_date,
+	    card_image,
 		image_url,
 		content,
 		featured
@@ -314,6 +163,7 @@ VALUES (
 	'/static/images/mat_vogels.jpg',
 	'9/25/2015',
 	'/static/images/water_falls.jpg',
+    '/static/images/water_falls.jpg',
 	'As a traveler, I have had the opportunity to explore some of the most beautiful natural wonders that this world has to offer, but nothing quite compares to the majestic beauty of waterfalls. There is something about the raw power and grace of water cascading down rock faces that leaves you in awe and wonder.
 
 	The journey to discover some of the world''s most stunning waterfalls has taken me across different countries and continents. From the towering Angel Falls in Venezuela to the stunning Iguazu Falls on the border of Argentina and Brazil, each waterfall has its unique charm and allure.
@@ -336,6 +186,7 @@ INSERT INTO
 		author,
 		author_url,
 		publish_date,
+	    card_image,
 		image_url,
 		content,
 		featured
@@ -347,6 +198,7 @@ VALUES (
 	'/static/images/william_wong.jpg',
 	'9/25/2015',
 	'/static/images/through_the_mist.jpg',
+    '/static/images/through_the_mist.jpg',
 	'Through the Mist
 
 	As a traveler, I have come to realize that one of the most mesmerizing experiences is watching the world awaken from behind a veil of mist. It is a unique moment when everything around you remains shrouded in mystery, and all you can hear are the sounds of nature, and all you can feel is the cool breeze on your skin. It''s a moment that reminds you of how tiny you are in this vast world and how there''s so much more to explore beyond your comfort zone.
@@ -373,6 +225,7 @@ INSERT INTO
 		author,
 		author_url,
 		publish_date,
+	    card_image,
 		image_url,
 		content,
 		featured
@@ -384,6 +237,7 @@ VALUES (
 	'/static/images/mat_vogels.jpg',
 	'9/25/2015',
 	'/static/images/awaken_early.jpg',
+    '/static/images/awaken_early.jpg',
 	'As a traveler, I have always believed in the adage that not all those who wander are lost. The journey itself is as important as the destination. One of my favorite things about traveling is experiencing the world wake up around me. There''s something magical about being up early, watching the sun rise over a new place, seeing the locals begin their day, and feeling like you have the whole world to yourself.
 
 	I call this particular journey, "Awaken Early." It was a trip I took to the beautiful city of Cusco, Peru. Cusco is a city steeped in history and culture, with stunning architecture and ancient ruins at every turn. But what made this journey truly special was the early mornings.
@@ -408,6 +262,7 @@ INSERT INTO
 		author,
 		author_url,
 		publish_date,
+	    card_image,
 		image_url,
 		content,
 		featured
@@ -419,6 +274,7 @@ VALUES (
 	'/static/images/mat_vogels.jpg',
 	'9/25/2015',
 	'/static/images/try_it_always.jpg',
+    '/static/images/try_it_always.jpg',
 	'Whenever I visit a new place, I make it a point to try something new. It could be trying out the local cuisine, indulging in an adventure sport or even just taking a different route back to my hotel. This philosophy of trying something new has never failed me and has always made my travels more memorable.
 
 	During one of my trips to Bali, Indonesia, I decided to try out surfing. I had never surfed before and was apprehensive about it, but I decided to give it a shot anyway. I booked a class with a local instructor and headed to the beach. The first few times I fell off the board, but with each fall, I learned something new. Eventually, I managed to stand up on the board and ride a wave all the way to shore. The feeling was exhilarating and I knew that I would have missed out on this experience if I had not tried it.

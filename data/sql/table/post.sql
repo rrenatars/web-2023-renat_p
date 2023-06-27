@@ -6,12 +6,13 @@ CREATE TABLE post
     `author`             VARCHAR(255) NOT NULL,
     `author_url`         VARCHAR(255) NOT NULL,
     `publish_date`       VARCHAR(255) NOT NULL,
+    `card_image`         VARCHAR(255) NOT NULL,
     `image_url`          VARCHAR(255) NOT NULL,
     `image_url_modifier` VARCHAR(255),
     `content`            TEXT NOT NULL,
     `featured` TINYINT DEFAULT 0,
     PRIMARY KEY (`post_id`)
 ) ENGINE = InnoDB
-CHARACTER SET = utf8mb4
-COLLATE utf8mb4_unicode_ci
+  CHARACTER SET = utf8mb4
+  COLLATE utf8mb4_unicode_ci
 ;

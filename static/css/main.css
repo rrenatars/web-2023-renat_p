@@ -210,6 +210,8 @@ body
 .author__avatar
 {
     border-radius: 60px;
+    width: 26px;
+    height: 26px;
 }
 
 .author__name
@@ -266,9 +268,11 @@ body
     text-decoration: none;
 }
 
-.photo__image
+.photo__img
 {
     background: #D6D6D6;
+    width: 296px;
+    height: 150px;
 }
 
 .photo__heading

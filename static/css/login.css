@@ -4,7 +4,8 @@
     overflow: hidden;
 }
 
-.body {
+.main
+{
     background: url(/static/images/login.jpg) no-repeat;
     background-size: 100%;
     display: flex;
@@ -12,21 +13,34 @@
     align-items: center;
 }
 
-.logo {
+.main__logo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: white;
-    font-family: 'Lora';
+    font-family: 'Lora', serif;
     height: 100vh;
 }
 
-.slogan {
+.logo__name
+{
+    display: flex;
+    align-items: baseline;
+}
+
+.name__slogan {
     font-family: "Oxygen";
     font-size: 17px;
 }
 
-.registration-box {
+.main__slogan
+{
+    font-family: "Oxygen";
+    font-size: 17px;
+}
+
+
+.main__registration-box {
     height: 70vh;
     width: 30vw;
     background: white;
@@ -36,13 +50,14 @@
     padding-top: 40px;
 }
 
-textarea:focus, input:focus{
-    outline: none;
-    background-color: #F7F7F7;
+.registration-box__title
+{
+    font: 400 34px 'Lora';
+    margin-bottom: 60px
 }
 
 
-input {
+.form__input {
     width: 95%;
     padding: 12px 0px 15px 10px;
     margin: 8px 0px;
@@ -53,9 +68,10 @@ input {
 }
 
 
-input[type=submit] {
+.form__submit{
     width: 25%;
     background-color: #DD783F;
+    border: none;
     color: white;
     padding: 14px 20px;
     border-radius: 4px;
@@ -63,16 +79,12 @@ input[type=submit] {
     font-size: 16px;
 }
 
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
-.title {
+.name__title {
     font: 400 34px 'Lora';
     margin-bottom: 10px;
 }
 
-.form-style {
+.registration-box__form {
     color: #7A7A7A;
     font: 400 12px 'Oxygen';
 }

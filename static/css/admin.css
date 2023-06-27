@@ -226,6 +226,16 @@ body
     color: #999999;
 }
 
+.heroimage__hint_smaller
+{
+    font: 12px/1.33 'Oxygen';
+    display: flex;
+    flex: none;
+    margin: 0;
+    align-items: flex-end;
+    color: #999999;
+}
+
 .photo__heroimage_smaller
 {
     background: #F7F7F7;
@@ -562,4 +572,14 @@ body
 {
     width: 24px;
     height: 24px;
+}
+
+.button
+{
+    border-radius: 3px;
+    font: 16px/1.5 'Oxygen';
+    background: #DD783F;
+    border: none;
+    height: 44px;
+    padding: 12px 31px;
 }

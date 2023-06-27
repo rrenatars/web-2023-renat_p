@@ -38,6 +38,7 @@ authorAvatar.addEventListener('change', function () {
 });
 
 let avatarUrlBase64 = "";
+let avatarFileName = "";
 
 function previewAuthorAvatar() {
     const file = authorAvatar.files[0];
@@ -46,12 +47,14 @@ function previewAuthorAvatar() {
         const reader = new FileReader();
 
         reader.addEventListener('load', function() {
-            avatarUrlBase64 = reader.result;
+            avatarBase64 = reader.result;
+            avatarUrlBase64 = avatarBase64.replace("data:", "").replace(/^.+,/, "")
 
             const elements = document.querySelectorAll('.author__avatar, .photo__area');
             Array.prototype.forEach.call(elements, el => {
                 const imgElement = document.createElement('img');
-                imgElement.src = avatarUrlBase64;
+                imgElement.src = avatarBase64;
+                avatarFileName = file.name
                 imgElement.setAttribute('class', 'area__avatar_preview');
 
                 el.innerHTML = '';
@@ -83,6 +86,8 @@ heroimageSmall.addEventListener('change', function () {
 
 let heroimageBigUrlBase64 = "";
 let heroimageSmallUrlBase64 = "";
+let bigHeroimageFileName = "";
+let smallHeroimageFileName = "";
 
 function previewImage(image, elements) {
     const file = image.files[0];
@@ -91,17 +96,19 @@ function previewImage(image, elements) {
         const reader = new FileReader();
 
         reader.addEventListener('load', function() {
-            const heroimageUrl = reader.result;
+            const heroimageBase64 = reader.result;
             if (elements[1].id === 'PreviewBigImage') {
-                heroimageBigUrlBase64 = heroimageUrl;
+                heroimageBigUrlBase64 = heroimageBase64.replace("data:", "").replace(/^.+,/, "");
+                bigHeroimageFileName = file.name;
             }
             if (elements[1].id === 'PreviewSmallImage') {
-                heroimageSmallUrlBase64 = heroimageUrl;
+                heroimageSmallUrlBase64 = heroimageBase64.replace("data:", "").replace(/^.+,/, "");
+                smallHeroimageFileName = file.name
             }
 
             Array.prototype.forEach.call(elements, el => {
                 const imgElement = document.createElement('img');
-                imgElement.src = heroimageUrl;
+                imgElement.src = heroimageBase64;
                 imgElement.setAttribute('class', 'photo__preview');
 
                 el.innerHTML = '';
@@ -125,13 +132,18 @@ const previewSmallImage = document.getElementById('PreviewSmallImage');
 
 const avatarHint = document.getElementById('UploadButton');
 const avatarHintText = avatarHint.innerText;
-const avatarPreview = document.getElementsByClassName('.photo__area');
 
 function deleteImage(el) {
-    const heroimageHint = document.querySelector('.heroimage__hint, .heroimage__hint_smaller');
     let temp = el.closest("p");
     if (temp.id != 'UploadButton') {
-        deleteHeroimage(heroimageHint);
+        if (temp.id === 'SmallHeroimageHint') {
+            const heroimageHintSmall = document.querySelector('.heroimage__hint_smaller');
+            deleteHeroimage(heroimageHintSmall);
+        }
+        if (temp.id === 'BigHeroimageHint') {
+            const heroimageHintBig = document.querySelector('.heroimage__hint');
+            deleteHeroimage(heroimageHintBig);
+        }
     } else {
         deleteAuthorAvatar(temp);
     }
@@ -161,7 +173,7 @@ function deleteHeroimage(element) {
         selector = '.photo__heroimage';
         preview = previewBigImage;
     }
-    if (element === 'SmallHeroimageHint') {
+    if (elementId === 'SmallHeroimageHint') {
         hint = smallHeroimageHint;
         hintText = smallHeroimageHintText;
         selector = '.photo__heroimage_smaller';
@@ -187,25 +199,40 @@ document.body.addEventListener('click', function (e) {
     }
 });
 
-const publishButton = document.querySelector('.publish__button');
+const publishButton = document.getElementById('Submit');
 
-publishButton.addEventListener('click', function() {
-    console.log(postContent.value);
+publishButton.addEventListener("click", () => {
     const formData = {
         title: postName.value,
         description: postDescription.value,
         author_name: authorName.value,
         author_avatar: avatarUrlBase64,
+        avatar_file_name: avatarFileName,
         publish_date: publishDate.value,
         big_heroimage: heroimageBigUrlBase64,
+        big_heroimage_file_name: bigHeroimageFileName,
         small_heroimage: heroimageSmallUrlBase64,
+        small_heroimage_file_name: smallHeroimageFileName,
         content: postContent.value
     }
-    const jsonData = JSON.stringify(formData);
 
-    console.log(jsonData);
+    console.log(JSON.stringify(formData, null, "\t"));
+    createPost(formData);
+  }    
+)
 
-});
+async function createPost(data) {
+    const response = await fetch("/api/post", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8"
+      },
+      body: JSON.stringify(data)
+    });
+    if (!response.ok) {
+      alert("Ошибка HTTP: " + response.status);
+    }
+  }
 
 
 
